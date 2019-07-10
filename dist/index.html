@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>  
+        <title>MY ROSTER</title>
+        <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">  
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">  
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="title"> My Roster</div>
+        <div class="inputPart"> 
+            <input class= "input" type="text" placeholder="Team Name..."><button class="button">Get Roster</button>
+        </div>
+        <div class="players"></div>
+
+    </div>
+
+
+
+    <script id="players-template" type="text/x-handlebars-template">
+        {{#each data}}
+         <div class="boxPlayers">
+             <div>{{firstName}} {{lastName}}</div>
+             <div>{{jersey}}</div>
+             <div class="imgback"><img src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" alt="players" onerror="this.src='https://www.spalding.com/on/demandware.static/-/Sites-spalding_us-Library/default/dwb90da497/Precision-Homepage-half-desktop.jpg'" height="300px" width="400px" ></div>
+             <div>{{pos}}</div>
+        
+        </div>
+         
+
+        {{/each}}
+    </script>
+
+<script src="./jquery/dist/jquery.js"></script>
+<script src="./handlebars/dist/handlebars.js"></script>
+<script src="render.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

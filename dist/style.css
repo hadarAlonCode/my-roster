@@ -1,0 +1,61 @@
+
+body {
+    background-color: rgb(202, 196, 196)
+}
+
+#container{
+    height: 100vh;
+    display: grid;
+    grid-gap: 10px;        /* !--- put some spaces between the div's ---! */
+    grid-template-rows: 1fr 1fr 10fr;
+    grid-template-areas:
+    "t" 
+    "i"
+    "p";
+    background-color: rgb(202, 196, 196);
+    font-family: 'Anton', sans-serif;
+
+}
+
+.inputPart{
+    display: grid;
+    grid-area: i;
+    grid-gap: 10px;        /* !--- put some spaces between the div's ---! */
+    grid-template-columns: 8fr 2fr;
+    height: 20px;
+    margin-top: 6px;
+    margin-left: 9px;
+    margin-right: 9px;
+
+}
+
+.players{
+    display: grid;
+    grid-area: p;
+    grid-gap: 10px;        /* !--- put some spaces between the div's ---! */
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+.boxPlayers{
+    background-color: rgb(250, 177, 18);
+    text-align: center;
+    box-shadow: 10px 12px 8px -6px rgba(0,0,0,0.75);
+    border-radius: 20px;
+
+}
+
+.imgback {
+    background-image: linear-gradient(to bottom , rgba(255,0,0,0), rgba(154,0,0,1));
+
+    height: 300px;
+    margin: 0 auto;
+    width: 400px;
+}
+
+.title{
+    display: grid;
+    grid-area: t;
+    justify-content: center;
+    font-size: 64px;
+}
