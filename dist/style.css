@@ -21,7 +21,7 @@ body {
     display: grid;
     grid-area: i;
     grid-gap: 10px;        /* !--- put some spaces between the div's ---! */
-    grid-template-columns: 8fr 2fr;
+    grid-template-columns: 8fr 2fr 2fr;
     height: 20px;
     margin-top: 6px;
     margin-left: 9px;

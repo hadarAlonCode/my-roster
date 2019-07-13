@@ -13,7 +13,7 @@
     <div id="container">
         <div class="title"> My Roster</div>
         <div class="inputPart"> 
-            <input class= "input" type="text" placeholder="Team Name..."><button class="button">Get Roster</button>
+            <input class= "input" type="text" placeholder="Team Name..."><button class="button">Get Roster</button><button class="dreamTeam">Dream Team</button>
         </div>
         <div class="players"></div>
 
@@ -24,16 +24,24 @@
     <script id="players-template" type="text/x-handlebars-template">
         {{#each data}}
          <div class="boxPlayers">
-             <div>{{firstName}} {{lastName}}</div>
-             <div>{{jersey}}</div>
+             <div class="fullName">{{firstName}} {{lastName}}</div>
+             <div class="jersey">{{jersey}}</div>
              <div class="imgback"><img src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" alt="players" onerror="this.src='https://www.spalding.com/on/demandware.static/-/Sites-spalding_us-Library/default/dwb90da497/Precision-Homepage-half-desktop.jpg'" height="300px" width="400px" ></div>
-             <div>{{pos}}</div>
+             <div class= "state"></div>
+             <div class="pos">{{pos}}</div>
         
         </div>
-         
-
         {{/each}}
     </script>
+    
+    <!-- <script id="stats-template" type="text/x-handlebars-template">
+        {{#each state}}
+        <span>Games Played: {{games_played}}</span>
+        <span>Minutes per game: {{minutes_per_game}}</span>
+        <span>Points per game: {{points_per_game}}</span>
+        {{/each}}
+    </script> -->
+    
 
 <script src="./jquery/dist/jquery.js"></script>
 <script src="./handlebars/dist/handlebars.js"></script>

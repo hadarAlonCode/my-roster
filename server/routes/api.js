@@ -2,6 +2,7 @@ const express = require( 'express' ) //install
 const router = express.Router()
 const request = require('request') //install
 
+let dreamTeam = []
 
 
 const teamToIDs = {
@@ -10,6 +11,9 @@ const teamToIDs = {
     "heat": "1610612748",
     "suns": "1610612756"
 }
+
+
+
 
 router.get('/teams/:teamName', function (req, res) {
     let teamName = req.params.teamName
@@ -35,6 +39,67 @@ router.get('/teams/:teamName', function (req, res) {
      res.send(newArray) 
      })
 })
+
+
+
+//extension- player stats
+// router.get('/playerStats/:player', function (req, res) {
+//     let player = req.params.player
+//     let splitName = player.split(" ");
+//     let last= splitName[1]
+//     let first = splitName[0]
+    
+//     request(`https://nba-players.herokuapp.com/players-stats/${last}/${first}`, function(err, response, body){
+//         console.log(response.body);
+        
+//     let myData = JSON.parse( response.body || "{}") // all the api is in body object
+//     // let gamesPlayed = myData[games_played]
+//     // let minutesPerGame = myData[minutes_per_game]
+//     // let pointsPerGame = myData[points_per_game]
+//     res.send(response.body)    
+// })
+// })
+
+
+
+//roster2 - put router for new team
+router.put('/team', function (req, res) {
+    console.log("Update is working")
+    let Name = req.body.teamName
+    let id = req.body.teamId
+    teamToIDs[Name] = id 
+    res.send( teamToIDs)
+
+})
+
+
+
+//======================
+
+//roster 2
+
+
+router.get('/dreamTeam', function (req, res) {
+   res.send(dreamTeam)
+})
+
+
+router.post('/roster:player', function (req, res) {
+    let player = req.params.player
+    let data = req.body
+    console.log(data);
+    
+    dreamTeam.push(data)
+    // console.log(dreamTeam);
+    
+})
+
+
+
+
+
+
+
 
 router.get('/', function (request, response) {
     console.log("Someone has come into the server. Brace yourselves.")
