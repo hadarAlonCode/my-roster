@@ -62,7 +62,7 @@ let getPlayers = function(teamName) {
     });
 
 
-    $(".players").on("click", ".boxPlayers",  function () {
+    $(".players").on("click", ".addDream",  function () {
        let fullName = $(this).closest(".boxPlayers").find(".fullName").text()
        let splitName = fullName.split(" ");
 
@@ -74,7 +74,24 @@ let getPlayers = function(teamName) {
           console.log(data);
 
         $.post("/roster"+ fullName, data ,function(response){
-
-           response.send('ok')
         })
     });
+
+
+
+    ///delete
+
+    $(".players").on("click", ".delete",  function () {
+        let fullName = $(this).closest(".boxPlayers").find(".fullName").text()
+        let splitName = fullName.split(" ");
+       let lastName = splitName[1]
+       let firstName = splitName[0]
+        
+    $.ajax({
+        url: "/roster" + firstName,
+        method: "DELETE",
+        success: function () {
+         }
+        
+    })
+})

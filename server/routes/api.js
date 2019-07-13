@@ -87,11 +87,39 @@ router.get('/dreamTeam', function (req, res) {
 router.post('/roster:player', function (req, res) {
     let player = req.params.player
     let data = req.body
-    console.log(data);
+    // console.log(data);
+    // console.log(data.firstName);
+
+    let findplayer = dreamTeam.findIndex(p => p.firstName === data.firstName )
+        console.log(findplayer)
+
+        if (findplayer === -1) {
+            dreamTeam.push(data)
+         
+        } else {
+            dreamTeam.splice(0, 0)
+        }
+    console.log(dreamTeam);
+    res.end()
+})
+
+//delete
+
+router.delete('/roster:player', function (req, res) {
+    let player = req.params.player
+    // console.log(player);
     
-    dreamTeam.push(data)
-    // console.log(dreamTeam);
+    let findplayer = dreamTeam.findIndex(p => p.firstName === player )
+    console.log(findplayer)
+    console.log(player);
     
+    if (findplayer === -1) {
+        dreamTeam.splice(0, 0)
+    } else {
+        dreamTeam.splice(findplayer, 1)
+    }
+    res.end()
+
 })
 
 

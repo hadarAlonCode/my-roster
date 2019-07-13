@@ -3,6 +3,7 @@
 
 <head>  
         <title>MY ROSTER</title>
+        <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">  
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">  
@@ -28,7 +29,7 @@
              <div class="jersey">{{jersey}}</div>
              <div class="imgback"><img src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" alt="players" onerror="this.src='https://www.spalding.com/on/demandware.static/-/Sites-spalding_us-Library/default/dwb90da497/Precision-Homepage-half-desktop.jpg'" height="300px" width="400px" ></div>
              <div class= "state"></div>
-             <div class="pos">{{pos}}</div>
+             <div class="pos">{{pos}}</div><button class="addDream">Add to Dream Team</button><button class="delete">Delete from Dream Team</button>
         
         </div>
         {{/each}}
