@@ -8,10 +8,10 @@ body {
 }
 
 #container{
-    height: 100vh;
+    
     display: grid;
     grid-gap: 10px;        /* !--- put some spaces between the div's ---! */
-    grid-template-rows: 1fr 1fr 10fr;
+    grid-template-rows: 100px 40px 10fr;
     grid-template-areas:
     "t" 
     "i"
@@ -42,6 +42,7 @@ body {
     grid-gap: 10px;        /* !--- put some spaces between the div's ---! */
     grid-template-columns: 1fr 1fr 1fr;
     opacity: 0.9;
+    z-index: 0;
     
 }
 
