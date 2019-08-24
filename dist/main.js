@@ -2,7 +2,6 @@
 const renderer = new Render
 
 
-
 let getPlayers = function(teamName) {
     $.get(`/teams/${teamName}`, function(response){
         renderer.renderPlayers(response)
@@ -20,7 +19,8 @@ let getPlayers = function(teamName) {
 
 
 
- //img click - extension===============================
+ //img click ------  need to finish
+
     // $(".players").on("click", ".imgback" ,function () {
     //     let fullName = $(this).closest(".boxPlayers").find(".fullName").text()
     // //  console.log(fullName);
@@ -46,7 +46,6 @@ let getPlayers = function(teamName) {
         // })
         // fetch()
     // }
-
 
 
     // let data = { name: newWonder, location: newLocation }

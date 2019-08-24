@@ -12,7 +12,7 @@ class Render {
     }
 
 
-    //extension
+    //need to finish
 //     renderPlayerStats(state){
 //         $('.state').empty()
 //         const source = $('#stats-template').html();
